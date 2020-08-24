@@ -1,0 +1,11 @@
+{
+    "baseUrl": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/login",
+    "testFiles": "**/*.{feature,features}",
+    "db": {
+        "user": "sisgemec_app",
+        "password": "20tribunal20",
+        "host": "jdbc:postgresql://sisgemec-db-dsv.i.tj.pa.gov.br",
+        "database": "sisgemec/sisgemec"
+    }
+}
+
