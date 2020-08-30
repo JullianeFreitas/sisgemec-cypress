@@ -1,5 +1,8 @@
 class AgendaPage {
 
+    static menuAgenda = '#mat-expansion-panel-header-4 > .mat-content > div > .title'
+    static gerenciarAgenda = '#cdk-accordion-child-4 > .mat-expansion-panel-body > .item-list > .menu-item > .text > .line-break'
+
     static titulo = '.titulo > input'
     static numeroProcesso = '.numero-processo > .ng-untouched'
     static dataEvento = '.data-evento > .ng-pristine'

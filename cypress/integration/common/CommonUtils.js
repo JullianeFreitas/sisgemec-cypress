@@ -8,12 +8,24 @@ class CommonUtils {
                .click() // clica no primeiro ng-select
                .contains(option) // Filtra pelo texto passado
                .then((item) => {
-                  cy.wrap(item).click(); // Clica na opção
-                 
+                  cy.wrap(item).click({force: true}); // Clica na opção
                });
          });
       }
 
+
+static clicarSeExistir(elemento){
+
+   cy.get('.content')
+    .then($conteudo => {
+      if ($conteudo.hasClass(elemento)) {
+         cy.log('passou aqui')
+         cy.get(elemento).click()
+     }
+      })
+   }
+
 }
+
 
 export default CommonUtils

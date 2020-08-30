@@ -5,9 +5,9 @@ import { Given } from "cypress-cucumber-preprocessor/steps";
  
 
 Given('eu abro a página de Agendar Evento', () => {
-    cy.get('#mat-expansion-panel-header-4 > .mat-content > div > .title').click({force : true})
-    cy.get('#cdk-accordion-child-4 > .mat-expansion-panel-body > .item-list > .menu-item > .text > .line-break').click()
-    cy.wait(2000)
+    cy.get(AgendaPage.menuAgenda).click({force : true})
+    cy.get(AgendaPage.gerenciarAgenda).click()
+    cy.wait(4000)
 })
 
 Given('informo que o título do evento é {string}', titulo => {
@@ -43,10 +43,16 @@ Given('gero a lista de participantes', () => {
     cy.get(AgendaPage.gerarLista).click()
 })
 
-Given('escolho o participante {string} da grid', ordem => {
+Given('escolho o participante com os parâmetros:', dataTable => {
+    // implementar um while pra tratar varios
+    const table = dataTable.hashes()
     cy.wait(3000)
-    const participante = AgendaPage.getParticipante(ordem)
-    cy.get(participante).click({force: true})
+    CommonUtils.ClickNgSelect(table[0]['dia'], 6)
+    cy.wait(5000)
+    cy.get('.mat-elevation-z0 [type="checkbox"]').eq(0).click({force: true})
+
+    // const participante = AgendaPage.getParticipante(table[0]['ordem_grid'])
+    // cy.get(participante).click({force: true})
 })
 
 Given('informo a descrição do evento com os parâmetros:', dataTable  => {
