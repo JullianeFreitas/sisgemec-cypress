@@ -15,7 +15,7 @@ class AgendaPage {
     static repetirEvento = '.repetir-evento > #destinatario > .ng-select-container > .ng-value-container > .ng-input > input'
     static modoRepeticao = '.modo-repeticao > .validate > .ng-select-container > .ng-value-container > .ng-input > input'
     static ocorreAte = '.ocorre-ate > .ng-untouched'
-    static repeteDomingo = ':nth-child(1) > label > p'
+    static repeteDomingo = '.weekDays-selector > :nth-child(1)'
     static repeteSegunda = ':nth-child(2) > label > p'
     static repeteTerca = ':nth-child(3) > label > p'
     static repeteQuarta = ':nth-child(4) > label > p'

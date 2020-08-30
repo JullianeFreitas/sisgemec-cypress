@@ -63,6 +63,22 @@ Given('valido que o evento foi salvo', () => {
 })
 
 
-Given('repito o evento com o modo de repetição {string}', () => {
-    expect(cy.get(AgendaPage.mensagemEventoCadastrado)).to.exist
+Given('repito o evento com o modo de repetição {string}', modo_repeticao => {
+    CommonUtils.ClickNgSelect("Sim", 4)
+    CommonUtils.ClickNgSelect(modo_repeticao, 5)
+})
+
+Given('repito o evento até a data {string}', data_fim => {
+    cy.get(AgendaPage.ocorreAte).type(data_fim)
+})
+
+Given('valido que todos os dias da semana foram selecionados', () => {
+    // refazer
+    cy.get(AgendaPage.repeteDomingo).should('not.be.checked')
+    cy.get(AgendaPage.repeteSegunda).should('not.be.checked')
+    cy.get(AgendaPage.repeteTerca).should('not.be.checked')
+    cy.get(AgendaPage.repeteQuarta).should('not.be.checked')
+    cy.get(AgendaPage.repeteQuinta).should('not.be.checked')
+    cy.get(AgendaPage.repeteSexta).should('not.be.checked')
+    cy.get(AgendaPage.repeteSabado).should('not.be.checked')
 })
