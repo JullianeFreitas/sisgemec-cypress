@@ -46,6 +46,15 @@ class UnidadePage {
     static modalidade = '#enmodalidade > .ng-select-container > .ng-value-container > .ng-input > input'
     static botaoConcluir = '.btn-green'
 
+    //CONVENIO/ACT
+
+    static convenente = '#nmconvenente'
+    static dataInicio = '#dtinicio'
+    static dataFim = '#dtfim'
+    static anexarArquivo = '#inputUpload'
+    static botaoAdicionarConvenioAct = '.col-sm-2 > .btn'
+
+
 }
 
 export default UnidadePage
