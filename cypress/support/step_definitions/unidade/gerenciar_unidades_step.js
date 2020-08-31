@@ -5,6 +5,7 @@ import { Given } from "cypress-cucumber-preprocessor/steps";
  
 
 Given('eu abro a página de Gerenciar Unidades', () => {
+
     cy.get(UnidadePage.menuUnidade).click({force : true})
     cy.get(UnidadePage.gerenciarUnidade).click()
     cy.wait(4000)
@@ -79,12 +80,19 @@ Given('informo os seguintes parâmetros para a aba Modalidade:', dataTable => {
     CommonUtils.ClickNgSelect(table['status_cejusc'], 0)
     CommonUtils.ClickNgSelect(table['modalidade'], 1)
    
-
 })
-
-
 
 Given('concluo o cadastro da unidade e valido se foi salva com sucesso', () => {
     cy.get(UnidadePage.botaoConcluir).click()
     cy.get(UnidadePage.mensagemUnidadeCadastrada).click()
+})
+
+Given('preencho os dados do Convênio ou ACT com os seguintes parâmetros:', dataTable => {
+    const table = dataTable.hashes()[0]
+   
+    cy.get(UnidadePage.convenente).type(table['convenente'])
+    cy.get(UnidadePage.dataInicio).type(table['data_inicio'])
+    cy.get(UnidadePage.dataFim).type(table['data_fim'])
+    CommonUtils.uploadFile(CommonUtils.getCaminhoAnexoPdf(), UnidadePage.anexarArquivo)
+    cy.get(UnidadePage.botaoAdicionarConvenioAct).click()
 })

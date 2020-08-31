@@ -1,4 +1,5 @@
 {
+    "anexoPdf": "exemplos_anexo/anexo.pdf", 
     "baseUrl": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/login",
     "testFiles": "**/*.{feature,features}",
     "db": {
@@ -7,5 +8,6 @@
         "host": "jdbc:postgresql://sisgemec-db-dsv.i.tj.pa.gov.br",
         "database": "sisgemec/sisgemec"
     }
+
 }
 
