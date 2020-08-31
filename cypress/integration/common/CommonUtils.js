@@ -19,12 +19,27 @@ static clicarSeExistir(elemento){
    cy.get('.content')
     .then($conteudo => {
       if ($conteudo.hasClass(elemento)) {
-         cy.log('passou aqui')
          cy.get(elemento).click()
      }
       })
    }
 
+
+   static readJSON() {
+      return require('../../../cypress.json');
+   } 
+
+   static getCaminhoAnexoPdf(){
+      var json = this.readJSON()
+      return json['anexoPdf']
+   }
+
+   static uploadFile  (fileName, selector) {
+   
+      cy.get(selector).attachFile(fileName)
+      cy.get(selector).trigger('change', { force: true })
+   }
+  
 }
 
 
