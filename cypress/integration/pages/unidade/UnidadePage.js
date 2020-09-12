@@ -29,11 +29,9 @@ class UnidadePage {
     static horaInicio = ':nth-child(2) > #hrinicio'
     static horaFim = ':nth-child(3) > #hrinicio'
     static botaoAdicionarHorario = 'fieldset > :nth-child(3) > .btn'
-
-
+    static classeTabelas = '.mat-table'
     
     static botaoAdicionarPerfilUsuario = '.swal2-confirm'
-
 
     static botaoSalvarAvancar = '.btn-green'
     static mensagemUnidadeCadastrada = '.swal2-confirm'
@@ -54,7 +52,6 @@ class UnidadePage {
     static dataFim = '#dtfim'
     static anexarArquivo = '#inputUpload'
     static botaoAdicionarConvenioAct = '.col-sm-2 > .btn'
-
 
 }
 
