@@ -4,7 +4,7 @@
     @unidade
     Esquema do Cenário: Criar uma unidade - Modalidade Interno
     Dado eu abro a página de Gerenciar Unidades
-    E escolho criar um novo
+    E escolho criar uma nova unidade
     E preencho as informações da unidade com os seguintes parâmetros:
     | nome_unidade   | tipo   | comarca   | competencia   | coordenador   | coordenador_adjunto   | supervisor   | email   | telefone   | celular   |
     | <nome_unidade> | <tipo> | <comarca> | <competencia> | <coordenador> | <coordenador_adjunto> | <supervisor> | <email> | <telefone> | <celular> |
@@ -18,7 +18,8 @@
     E informo os seguintes parâmetros para a aba Modalidade:
     | ata_instalacao | portaria | data_instalacao | status_cejusc | modalidade |
     | 145            | 2014     | 2020-01-01      | Ativo         | Interno    |
-    Entao concluo o cadastro da unidade e valido se foi salva com sucesso
+    Entao concluo o cadastro da unidade
+    E valido que a unidade criada é retornada na tela de consulta de unidades
 
     Exemplos:
     | nome_unidade  | tipo   | comarca | competencia | coordenador     | coordenador_adjunto | supervisor       | email             | telefone       | celular        |
@@ -27,7 +28,7 @@
     @unidade
     Esquema do Cenário: Criar uma unidade - Modalidade ACT/Convênio
     Dado eu abro a página de Gerenciar Unidades
-    E escolho criar um novo
+    E escolho criar uma nova unidade
     E preencho as informações da unidade com os seguintes parâmetros:
     | nome_unidade   | tipo   | comarca   | competencia   | coordenador   | coordenador_adjunto   | supervisor   | email   | telefone   | celular   |
     | <nome_unidade> | <tipo> | <comarca> | <competencia> | <coordenador> | <coordenador_adjunto> | <supervisor> | <email> | <telefone> | <celular> |
@@ -44,7 +45,8 @@
     E preencho os dados do Convênio ou ACT com os seguintes parâmetros:
     | convenente | data_inicio | data_fim  |
     | Conv Teste |  2020-01-01 | 2020-05-01|
-    Entao concluo o cadastro da unidade e valido se foi salva com sucesso
+    Entao concluo o cadastro da unidade
+    E valido que a unidade criada é retornada na tela de consulta de unidades
 
     Exemplos:
     | nome_unidade  | tipo   | comarca | competencia | coordenador     | coordenador_adjunto | supervisor       | email             | telefone       | celular        |
