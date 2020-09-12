@@ -11,12 +11,12 @@ class UnidadePage {
     // NOVA UNIDADE
 
     static nomeUnidade = '#nmlocal'
-    static tipoUnidade = '#entipounidade > .ng-select-container > .ng-value-container > .ng-input > input'
-    static comarca = '#comarca > .ng-select-container > .ng-value-container > .ng-input > input'
-    static competencia = '#encompetencia > .ng-select-container > .ng-value-container > .ng-input > input'
-    static coordenador = '#coordenador > .ng-select-container > .ng-value-container > .ng-input > input'
-    static coordenadorAdjunto = '#coordenadoradjunto > .ng-select-container > .ng-value-container > .ng-input > input'
-    static supervisor = '#supervisor > .ng-select-container > .ng-value-container > .ng-input > input'
+    static tipoUnidade = '#entipounidade'
+    static comarca = '#comarca'
+    static competencia = '#encompetencia'
+    static coordenador = '#coordenador'
+    static coordenadorAdjunto = '#coordenadoradjunto'
+    static supervisor = '#supervisor'
     static email = '#dsemail'
     static telefone = '#notelefone'
     static celular = '#nocelular'
@@ -25,6 +25,7 @@ class UnidadePage {
     static botaoBuscaCep = ':nth-child(7) > .btn'
     static numeroEndereco = '#nonumero'
 
+    static turno = '#enturno'
     static horaInicio = ':nth-child(2) > #hrinicio'
     static horaFim = ':nth-child(3) > #hrinicio'
     static botaoAdicionarHorario = 'fieldset > :nth-child(3) > .btn'
@@ -42,8 +43,8 @@ class UnidadePage {
     static ataInstalacao = '#dsatainstalacao'
     static portaria = '#noportaria'
     static dataInstalacao = '#dtinstalacao'
-    static statusCejusc = '#flstatuscejusc > .ng-select-container > .ng-value-container > .ng-input > input'
-    static modalidade = '#enmodalidade > .ng-select-container > .ng-value-container > .ng-input > input'
+    static statusCejusc = '#flstatuscejusc'
+    static modalidade = '#enmodalidade'
     static botaoConcluir = '.btn-green'
 
     //CONVENIO/ACT
