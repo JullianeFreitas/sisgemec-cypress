@@ -30,7 +30,6 @@ class CommonUtils {
    }
 
    static clicaSeExistir(elemento) {
-
       cy.get('body').then(($body) => {
          if ($body.find(elemento).length) {
             cy.get(elemento).click()
@@ -38,22 +37,40 @@ class CommonUtils {
       })
    }
 
+   static getUrlPagina(pagina){
+      var json = this.readJSON()
+      return json[pagina]
+   }
+
 
    static readJSON() {
       return require('../../../cypress.json');
    }
 
-   static getCaminhoAnexoPdf() {
-      //pasar "pdf" como parametro e retornar o caminho
+   static getCaminhoAnexo(tipoArquivo) {
       var json = this.readJSON()
-      return json['anexoPdf']
+      if (tipoArquivo == 'pdf'){
+         return json['anexoPdf']
+      }
+      return ''
    }
 
    static uploadFile(fileName, selector) {
-
       cy.get(selector).attachFile(fileName)
       cy.get(selector).trigger('change', { force: true })
    }
+
+   static removeAcento (text)
+{       
+   //  text = text.toLowerCase();                                                         
+    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
+    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
+    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
+    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
+    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
+    text = text.replace(new RegExp('[Ç]','gi'), 'c');
+    return text;                 
+}
 
 }
 
