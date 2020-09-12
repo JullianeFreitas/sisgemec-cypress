@@ -2,12 +2,9 @@
     "anexoPdf": "exemplos_anexo/anexo.pdf", 
     "baseUrl": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/login",
     "testFiles": "**/*.{feature,features}",
-    "db": {
-        "user": "sisgemec_app",
-        "password": "20tribunal20",
-        "host": "jdbc:postgresql://sisgemec-db-dsv.i.tj.pa.gov.br",
-        "database": "sisgemec/sisgemec"
-    }
+    "urlPaginaInicial": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito",
+    "urlConsultarUnidades": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito/unidade",
+    "urlCadastrarUnidades": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito/unidade/cadastrar"
 
 }
 
