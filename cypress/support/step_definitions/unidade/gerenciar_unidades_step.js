@@ -18,19 +18,19 @@ Given('escolho criar um novo', () => {
 Given('preencho as informações da unidade com os seguintes parâmetros:', dataTable => {
     const table = dataTable.hashes()[0]
 
-    cy.get(UnidadePage.nomeUnidade).type(table['nome_unidade'] +' '+ String(parseInt(Math.random() * 100)))
-    CommonUtils.ClickNgSelect(table['tipo'], 0)
-    CommonUtils.ClickNgSelect(table['comarca'], 1)
-    CommonUtils.ClickNgSelect(table['competencia'], 2)
+    cy.get(UnidadePage.nomeUnidade).type(table['nome_unidade'] +' '+ String(CommonUtils.geraNumeroAleatorio(99)))
 
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.tipoUnidade, table['tipo'])
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.comarca, table['comarca'])
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.competencia, table['competencia'])
 
-    // revisar clique no popup de adição de perfil
-    CommonUtils.ClickNgSelect(table['coordenador'], 3)
-    cy.get(UnidadePage.botaoAdicionarPerfilUsuario).click()
-    CommonUtils.ClickNgSelect(table['coordenador_adjunto'], 4)
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.coordenador, table['coordenador'])
+    CommonUtils.clicaSeExistir(UnidadePage.botaoAdicionarPerfilUsuario)
+
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.coordenadorAdjunto, table['coordenador_adjunto'])
    
-    CommonUtils.ClickNgSelect(table['supervisor'], 5)
-    cy.get(UnidadePage.botaoAdicionarPerfilUsuario).click()
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.supervisor, table['supervisor'])
+    CommonUtils.clicaSeExistir(UnidadePage.botaoAdicionarPerfilUsuario)
   
     cy.wait(2000)
     cy.get(UnidadePage.email).type(table['email'])
@@ -51,7 +51,8 @@ Given('informo que o número do endereço é {string}', numero => {
 Given('informo o horário de funcionamento com os seguintes parâmetros:', dataTable => {
     const table = dataTable.hashes()[0]
 
-    CommonUtils.ClickNgSelect(table['turno'], 6)
+    // CommonUtils.ClickNgSelect(table['turno'], 6)
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.turno, table['turno'])
     cy.get(UnidadePage.horaInicio).type(table['inicio'])
     cy.get(UnidadePage.horaFim).type(table['fim'])
 
@@ -77,8 +78,8 @@ Given('informo os seguintes parâmetros para a aba Modalidade:', dataTable => {
     cy.get(UnidadePage.ataInstalacao).type(table['ata_instalacao'])
     cy.get(UnidadePage.portaria).type(table['portaria'])
     cy.get(UnidadePage.dataInstalacao).type(table['data_instalacao'])
-    CommonUtils.ClickNgSelect(table['status_cejusc'], 0)
-    CommonUtils.ClickNgSelect(table['modalidade'], 1)
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.statusCejusc, table['status_cejusc'])
+    CommonUtils.selecionaOpcaoCombo(UnidadePage.modalidade, table['modalidade'])
    
 })
 
