@@ -1,6 +1,7 @@
 require('cypress-plugin-tab')
 import "../support/commands"
 import CommonUtils from '../integration/common/CommonUtils'
+import { Given } from "cypress-cucumber-preprocessor/steps"
 
 beforeEach(function () {
         cy.visit('api-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/publico/perfis')

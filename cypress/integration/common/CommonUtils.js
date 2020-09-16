@@ -1,5 +1,16 @@
 class CommonUtils {
 
+   static variaveisCompartilhadas = {}
+
+   //responsável por armazenar variáveis que serão usadas globalmente
+   static gravarVariavel(chave, valor){
+      this.variaveisCompartilhadas[chave] = valor;
+   }
+
+   static retornarVariavel(chave){
+      return this.variaveisCompartilhadas[chave]
+   }
+
    static ClickNgSelect(option, ordem_combo) {
       cy.get("ng-select") // get all ng-select elements
          .then((selects) => {
