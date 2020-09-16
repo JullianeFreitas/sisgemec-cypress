@@ -4,6 +4,7 @@ import CommonUtils from '../integration/common/CommonUtils'
 import { Given } from "cypress-cucumber-preprocessor/steps"
 
 beforeEach(function () {
+        //TODO parametrizar
         cy.visit('api-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/publico/perfis')
         cy.visit('/')
         cy.login('470.036.530-79', '123456')

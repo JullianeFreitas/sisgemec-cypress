@@ -4,7 +4,8 @@
     "testFiles": "**/*.{feature,features}",
     "urlPaginaInicial": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito",
     "urlConsultarUnidades": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito/unidade",
-    "urlCadastrarUnidades": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito/unidade/cadastrar"
+    "urlCadastrarUnidades": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/restrito/unidade/cadastrar",
+    "urlConsultaMediadores": "https://app-nodejs-sisgemec-sisgemec-dev.dev.i.tj.pa.gov.br/publico/mediadores"
 
 }
 

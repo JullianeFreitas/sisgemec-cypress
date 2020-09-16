@@ -31,7 +31,10 @@ class UnidadePage {
     static botaoAdicionarHorario = 'fieldset > :nth-child(3) > .btn'
     static classeTabelas = '.mat-table'
     
-    static botaoAdicionarPerfilUsuario = '.swal2-confirm'
+    // static botaoAdicionarPerfilUsuario = '.swal2-confirm'
+    static caixaMensagem = '.swal2-confirm'
+    static textoCaixaMensagem = '.swal2-title'
+    static botaoOkCaixaMensagem = '.swal2-confirm.swal2-styled'
 
     static botaoSalvarAvancar = '.btn-green'
     static mensagemUnidadeCadastrada = '.swal2-confirm'

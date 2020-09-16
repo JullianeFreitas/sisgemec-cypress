@@ -1,30 +1,34 @@
 /// <reference types="Cypress"/>
 import unidade from '../../../integration/factory/unidade/UnidadeFactory'
 
-Given('eu abro a página de Gerenciar Unidades', () => {
+Given('que eu abra a página de Gerenciar Unidades', () => {
     unidade.abrirPaginaGerenciarUnidade()
 })
 
-Given('escolho criar uma nova unidade', () => {
+Given('escolha criar uma nova unidade', () => {
     unidade.abrirTelaCriarUnidade()
 })
 
-Given('preencho as informações da unidade com os seguintes parâmetros:', dataTable => {
+Given('preencha as informações da unidade com os seguintes parâmetros:', dataTable => {
     const table = dataTable.hashes()[0]
     unidade.preencherInformacoesBasicasUnidades(table) 
 })
 
-Given('informo o CEP {string}', cep => {
+Given('informe o CEP {string}', cep => {
     unidade.preencherCEP(cep)
 })
 
-Given('informo que o número do endereço é {string}', numero => {
+Given('informe que o número do endereço é {string}', numero => {
     unidade.preencherNumeroEndereco(numero)
 })
 
-Given('informo o horário de funcionamento com os seguintes parâmetros:', dataTable => {
+Given('informe o horário de funcionamento com os seguintes parâmetros:', dataTable => {
     const table = dataTable.hashes()[0]
     unidade.preencherInformacoesHorarioFuncionamento(table)
+})
+
+Given('valido que o horário de funcionamento foi adicionado à grid', () => {
+    unidade.validarHorarioFuncionamentoGrid()
 })
 
 Given('salvo os dados e avanço para a próxima aba', () => {
@@ -52,6 +56,17 @@ Given('preencho os dados do Convênio ou ACT com os seguintes parâmetros:', dat
 Given('valido que a unidade criada é retornada na tela de consulta de unidades', () => {
     unidade.consultarUnidadePorNome()
     unidade.validarExistenciaUnidadeGrid()
-    
+})
 
+Given('valido que foi exibida a seguinte mensagem:', dataTable => {
+    const table = dataTable.hashes()[0]
+    unidade.validarCaixaMensagem(table['mensagem'])
+})
+
+Given('altero o nome da unidade para {string}', nomeUnidade => {
+    unidade.definirNomeUnidade(nomeUnidade)
+})
+
+Given('busque pela unidade {string}', nomeUnidade => {
+    unidade.consultarUnidadePorNome(nomeUnidade)
 })
